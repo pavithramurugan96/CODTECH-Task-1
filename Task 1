@@ -1,0 +1,35 @@
+def calculator():
+    while True:
+        try:
+            
+            num1 = int(input("Enter first number: "))
+            num2 = int(input("Enter second number: "))
+            symbol = input("Enter symbol (/,+,-,*): ")
+
+            if symbol == '+':
+                res = num1 + num2
+                print(f"Addition: {res}")
+            elif symbol == '-':
+                res = num1 - num2
+                print(f"Subtraction: {res}")
+            elif symbol == '*':
+                res = num1 * num2
+                print(f"Multiplication: {res}")
+            elif symbol == '/':
+                if num2 != 0:
+                    res = num1 / num2
+                    print(f"Division: {res}")
+                else:
+                    print("Error: Division by zero is not allowed.")
+            else:
+                print("Wrong input")
+
+        except ValueError:
+            print("Invalid input. Please enter numeric values.")
+
+        value = input("Do you want to continue (y/n): ").lower()
+        if value != 'y':
+            print("Exiting the calculator. Goodbye!")
+            break
+
+calculator()
